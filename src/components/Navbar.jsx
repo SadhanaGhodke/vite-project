@@ -1,73 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
 import '../styles.css';
 
 const Navbar = () => {
-    return (
-        <header>
-            <div className="navbar">
-                <div className="logo-sec">
-                    <img src="/photos/logo.png" alt="Logo" className="logo" />
-                </div>
-                <div className="menu-section">
-                    <Link to="/">Home</Link>
-                    {/* <ScrollLink to="services" smooth={true} duration={500}>
-                        Services
-                    </ScrollLink> */}
-                    <Link to="/services">Services</Link>
-                    <ScrollLink to="about" smooth={true} duration={500}>
-                        About Us
-                    </ScrollLink>
-                    <Link to="/reading">Reading</Link>
-                    <ScrollLink to="water" smooth={true} duration={500}>
-                        Ticket Resolution
-                    </ScrollLink>
-                </div>
-                <div className="icon">
-                    <Link to="#">
-                        <i className="bx bxs-user"></i>
-                    </Link>
-                </div>
-            </div>
-        </header>
-    );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header>
+      <nav className="navbar">
+        {/* Logo Section */}
+        <div className="logo-sec">
+          <img src="/photos/logo.png" alt="Logo" className="logo" />
+          <h1 className="brand-name">JalDarpan</h1>
+        </div>
+
+        {/* Menu Section */}
+        <div className={`menu-section ${isMenuOpen ? 'open' : ''}`}>
+          <Link to="/" onClick={toggleMenu}>Home</Link>
+          <Link to="/services" onClick={toggleMenu}>Services</Link>
+          <Link to="/reading" onClick={toggleMenu}>Reading</Link>
+          <Link to="/report" onClick={toggleMenu}>Report</Link>
+          <Link to="/tutorial" onClick={toggleMenu}>Tutorial</Link>
+          <Link to="/about" onClick={toggleMenu}>About Us</Link>
+          <div className="auth-links">
+            <Link to="/login" className="auth-link" onClick={toggleMenu}>
+              <i className="bx bx-log-in"></i> Login
+            </Link>
+            <Link to="/signup" className="auth-link" onClick={toggleMenu}>
+              <i className="bx bx-user-plus"></i> Signup
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className={`mobile-menu-toggle ${isMenuOpen ? 'open' : ''}`}
+          onClick={toggleMenu}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+      </nav>
+    </header>
+  );
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import '../styles.css';
-
-// const Navbar = () => {
-//     return (
-//         <header>
-//             <div className="navbar">
-//                 <div className="logo-sec">
-//                     <img src="/photos/logo.png" alt="Logo" className="logo" />
-//                 </div>
-//                 <div className="menu-section">
-//                     <a href="#home">Home</a>
-//                     <a href="#services">Services</a>
-//                     <a href="#about">About Us</a>
-//                     <a href="/reading">Reading</a>
-//                     <a href="#water">Water Quality</a>
-//                 </div>
-//                 <div className="icon">
-//                     <a href="#">
-//                         <i className="bx bxs-user"></i>
-//                     </a>
-//                 </div>
-//             </div>
-//         </header>
-//     );
-// };
-
-// export default Navbar;

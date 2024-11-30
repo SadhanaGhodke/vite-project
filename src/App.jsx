@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Reading from './components/Reading';
 
 
+
 import Services from './components/Services';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
                 
                 <Route path="/reading" element={<Reading />} />
                 <Route path="/services" element={<Services />} />
+                
             </Routes>
             
             <Footer />
