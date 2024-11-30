@@ -52,95 +52,110 @@ const Reading = () => {
             </section>
         </div>
 
-<section class="alert">
-<div class="title">
-    <h3>Alert History</h3>
-</div>
+        <section className="alert water-theme">
+                <div className="section-title">
+                    <h3>Alert History</h3>
+                </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Sr No.</th>
-            <th>Type</th>
-            <th>Date</th>
-            <th>Location</th>
-            <th>Resolved By</th>
-            <th>Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Type 1</td>
-            <td>2023-09-15</td>
-            <td>Pimpri, pune</td>
-            <td>John Doe</td>
-            <td><button onclick="downloadFile()">Download</button></td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Type 2</td>
-            <td>2023-08-18</td>
-            <td>Pimpri, pune</td>
-            <td>Jane Smith</td>
-            <td><button onclick="downloadFile()">Download</button></td>
-        </tr>
-        
-    </tbody>/
-</table>
-</section>
+                <div className="water-card">
+                    <table className="water-table">
+                        <thead>
+                            <tr>
+                                <th>Sr No.</th>
+                                <th>Type</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Resolved By</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Type 1</td>
+                                <td>2023-09-15</td>
+                                <td>Pimpri, pune</td>
+                                <td>John Doe</td>
+                                <td>
+                                    <button className="water-button">Download</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Type 2</td>
+                                <td>2023-08-18</td>
+                                <td>Pimpri, pune</td>
+                                <td>Jane Smith</td>
+                                <td>
+                                    <button className="water-button">Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-<section class="report">
-<div class="title">
-    <h3>Past Analytics</h3>
-</div>
-<div class="report-box" >
-    <div class="dur-box">
-        <div class="duration">
-            <label for="duration">Duration:</label>
-        </div>
-        <div class="option">
-            <label><input type="radio" name="duration" value="monthly"/> Monthly</label>
-            <label><input type="radio" name="duration" value="weekly"/> Weekly</label>
-            <label><input type="radio" name="duration" value="yearly"/> Yearly</label>
-        </div>
-    </div>
+            <section className="report water-theme">
+                <div className="section-title">
+                    <h3>Past Analytics</h3>
+                </div>
 
-    <div class="report-row">
-        <label for="reportType">Report Type:</label>
-        <select id="reportType">
-            <option value="finance">select</option>
-            <option value="sales">Sales</option>
-            <option value="inventory">Inventory</option>
-        </select>
-    </div>
+                <div className="water-card">
+                    <div className="report-container">
+                        <div className="duration-box">
+                            <div className="duration-label">
+                                <label htmlFor="duration">Duration:</label>
+                            </div>
+                            <div className="duration-options">
+                                <label>
+                                    <input type="radio" name="duration" value="monthly"/> 
+                                    Monthly
+                                </label>
+                                <label>
+                                    <input type="radio" name="duration" value="weekly"/> 
+                                    Weekly
+                                </label>
+                                <label>
+                                    <input type="radio" name="duration" value="yearly"/> 
+                                    Yearly
+                                </label>
+                            </div>
+                        </div>
 
-    <div class="report-row">
-        <label for="state">State:</label>
-        <select id="state">
-            <option value="newYork">select</option>
-            <option value="california">California</option>
-            <option value="texas">Texas</option>
-            
-        </select>
-    </div>
+                        <div className="report-row">
+                            <label htmlFor="reportType">Report Type:</label>
+                            <select id="reportType" className="water-select">
+                                <option value="finance">select</option>
+                                <option value="sales">Sales</option>
+                                <option value="inventory">Inventory</option>
+                            </select>
+                        </div>
 
-    <div class="report-row">
-        <label for="district">District:</label>
-        <select id="district">
-            <option value="district1">select</option>
-            <option value="district2">District 2</option>
-            <option value="district3">District 3</option>
-            
-        </select>
-    </div>
+                        <div className="report-row">
+                            <label htmlFor="state">State:</label>
+                            <select id="state" className="water-select">
+                                <option value="newYork">select</option>
+                                <option value="california">California</option>
+                                <option value="texas">Texas</option>
+                            </select>
+                        </div>
 
-    <div class="download-button">
-        <button onclick="downloadReport()">Download</button>
-    </div>
-</div>
-</section>
-</>
+                        <div className="report-row">
+                            <label htmlFor="district">District:</label>
+                            <select id="district" className="water-select">
+                                <option value="district1">select</option>
+                                <option value="district2">District 2</option>
+                                <option value="district3">District 3</option>
+                            </select>
+                        </div>
+
+                        <div className="download-button">
+                            <button className="water-button full-width">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </>
     );
 };
 

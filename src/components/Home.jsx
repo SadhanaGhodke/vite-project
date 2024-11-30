@@ -10,10 +10,10 @@ const Home = () => {
             <img src="/photos/bg.jpg" alt="Background" />
             <div className="text">
                 <div className="hero-title">
-                    <h1>Groundwater Monitoring:</h1>
+                    <h1>Jaldarpan</h1>
                 </div>
                 <div className="hero-sub-title">
-                    <h3>Real-Time Insights and Alerts</h3>
+                    <h3>Groundwater Monitoring: Real-Time Insights and Alerts</h3>
                 </div>
                
             </div>
@@ -25,3 +25,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+

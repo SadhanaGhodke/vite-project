@@ -1,41 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+
 import '../styles.css';
 
 const Navbar = () => {
     return (
         <header>
-            <div className="navbar">
+            <nav className="navbar">
+                {/* Logo Section */}
                 <div className="logo-sec">
                     <img src="/photos/logo.png" alt="Logo" className="logo" />
+                    <h1 className="brand-name">JalDarpan</h1>
                 </div>
+
+                {/* Menu Section */}
                 <div className="menu-section">
                     <Link to="/">Home</Link>
-                    {/* <ScrollLink to="services" smooth={true} duration={500}>
-                        Services
-                    </ScrollLink> */}
                     <Link to="/services">Services</Link>
-                    <ScrollLink to="about" smooth={true} duration={500}>
-                        About Us
-                    </ScrollLink>
                     <Link to="/reading">Reading</Link>
-                    <ScrollLink to="water" smooth={true} duration={500}>
-                        Ticket Resolution
-                    </ScrollLink>
+                    <Link to="/report">Report</Link>
+                    <Link to="/tutorial">Tutorial</Link>
+                    <Link to="/about">About Us</Link>
                 </div>
-                <div className="icon">
-                    <Link to="#">
-                        <i className="bx bxs-user"></i>
+
+                {/* Right Section with Login and Signup */}
+                <div className="icon-section">
+                    <Link to="/login" className="auth-link">
+                        <i className="bx bx-log-in"></i> Login
+                    </Link>
+                    <Link to="/signup" className="auth-link">
+                        <i className="bx bx-user-plus"></i> Signup
                     </Link>
                 </div>
-            </div>
+            </nav>
         </header>
     );
 };
 
 export default Navbar;
-
 
 
 
