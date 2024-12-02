@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Reading from './components/Reading';
+import Report from './components/Report';
 
 
 
@@ -15,7 +16,7 @@ const App = () => {
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
-                
+                <Route path="/report" element={<Report />} />
                 <Route path="/reading" element={<Reading />} />
                 <Route path="/services" element={<Services />} />
                 
